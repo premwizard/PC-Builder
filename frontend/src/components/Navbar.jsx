@@ -72,6 +72,8 @@ export default function Navbar() {
     { name: "Components", path: "/components" },
     { name: "Community",  path: "/community" },
     { name: "Compare",    path: "/compare" },
+    { name: "FPS",        path: "/fps",       badge: "New" },
+    { name: "Recommend",  path: "/recommend",  badge: "New" },
   ];
 
   const isActive = (p) => location.pathname === p;
@@ -115,17 +117,23 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-5">
           {links.map((l) => (
             <Link
               key={l.name}
               to={l.path}
-              className="text-sm font-semibold relative group transition-colors duration-200"
+              className="text-sm font-semibold relative group transition-colors duration-200 flex items-center gap-1.5"
               style={{ color: isActive(l.path) ? "#A78BFA" : "#94A3B8" }}
               onMouseEnter={e => { if (!isActive(l.path)) e.currentTarget.style.color = "#FFFFFF"; }}
               onMouseLeave={e => { if (!isActive(l.path)) e.currentTarget.style.color = "#94A3B8"; }}
             >
               {l.name}
+              {l.badge && (
+                <span className="text-[8px] font-black uppercase px-1 py-0.5 rounded-md"
+                  style={{ background: "rgba(6,182,212,0.15)", color: "#06B6D4", border: "1px solid rgba(6,182,212,0.25)" }}>
+                  {l.badge}
+                </span>
+              )}
               <span
                 className="absolute -bottom-1 left-0 h-[2px] rounded-full transition-all duration-300"
                 style={{
