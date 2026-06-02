@@ -145,6 +145,11 @@ export default function Navbar() {
           ))}
         </div>
 
+
+
+
+        
+
         {/* Desktop Auth */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
           {user ? (
@@ -154,7 +159,7 @@ export default function Navbar() {
                 className="flex items-center gap-1.5 text-xs font-bold px-3 py-2 rounded-xl transition-all hover:-translate-y-0.5"
                 style={{ background: "rgba(124,58,237,0.1)", border: "1px solid rgba(124,58,237,0.25)", color: "#C4B5FD" }}
               >
-                <LayoutDashboard className="w-3.5 h-3.5" /> Dashboard
+                <LayoutDashboard className="w-3.5 h-3.5" /> Dashboard12
               </Link>
               <div className="flex items-center gap-2 px-2 py-1 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
                 <img
